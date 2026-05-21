@@ -1,5 +1,7 @@
 # Seniorenwohnkompass
 
+![Seniorenwohnkompass - Startseite](images/swk.png)
+
 WordPress-basierte Affiliate- und Content-Site für die DACH-Region, die Senioren (65–80) und ihre Angehörigen (40–55) durch Themen wie Pflegegrade, Wohnen im Alter, Finanzierung und rechtliche Vorsorge führt.
 
 ## Was es ist
