@@ -51,6 +51,12 @@ Alle wiederkehrenden Aufgaben sind als Slash-Commands im [Claude-Workflows-Syste
 - **Knowledge-Tracker-Refresh** — Quartals-Crawl + automatische Refresh-Vorschläge für betroffene Artikel
 - **Recht-Re-Check** — Compliance-Audit bei Gesetzes-News oder ad-hoc
 
+### Design-System (Single Source of Truth)
+
+Das visuelle Erscheinungsbild ist aus der Live-Site in ein framework-agnostisches **Design-System** überführt: Design-Tokens als CSS Custom Properties **und** im W3C/DTCG-JSON-Format, dazu ein menschenlesbarer Styleguide (Farben, Typografie, Spacing, Komponenten). Damit gilt auch fürs Design "Single Source of Truth" statt verstreuter Hex-Werte im Theme.
+
+Beim Auslesen wurden zwei parallel laufende Stil-Ebenen sichtbar — das gewollte Marken-System der Startseite und die Theme-Defaults der Artikelseiten. Statt sie zu vermischen, wurde bewusst auf das Marken-System standardisiert und die Abweichung dokumentiert. Separat versioniert in einem privaten Token-Repo.
+
 ## Tech-Stack (Zusammenfassung)
 
 | Bereich | Stack |
@@ -59,6 +65,7 @@ Alle wiederkehrenden Aufgaben sind als Slash-Commands im [Claude-Workflows-Syste
 | Hosting | Managed WordPress (EU), Raspberry Pi (Monitoring) |
 | Pipeline | Python (Markdown → Gutenberg, WP-REST) |
 | SEO | RankMath, strukturierte Daten, internes Briefing-Framework |
+| Design | Design-Tokens (CSS Custom Properties + W3C/DTCG-JSON), Styleguide |
 | Compliance | Real Cookie Banner, DSGVO-Audits, YMYL-Quellen-Disziplin |
 | Monitoring | Bash + JSON + Slack-Webhook, launchd / cron |
 | Orchestrierung | Claude Code CLI mit eigenen Skills/Workflows |
@@ -67,5 +74,6 @@ Alle wiederkehrenden Aufgaben sind als Slash-Commands im [Claude-Workflows-Syste
 
 - **Pipeline statt Klick-Workflow.** Inhalte werden in Git versioniert, validiert und automatisiert ausgespielt — nicht direkt im WP-Editor produziert.
 - **Single Source of Truth für Zahlen.** Gesetzliche Beträge kommen aus Quartals-Snapshots, nicht aus dem Kopf.
+- **Single Source of Truth fürs Design.** Das Erscheinungsbild liegt als versionierte Design-Tokens vor — und Stil-Konflikte werden bewusst aufgelöst statt gemittelt.
 - **Minimaler Stack, maximale Reproduzierbarkeit.** Pi-Cron + Bash + JSON statt SaaS-Monitoring — bewusste Wahl, weil die Site wenig Frequenz, aber lange Lebensdauer hat.
 - **Doku ist Pflicht.** Workflows, Runbooks, Architektur-Entscheidungen sind dokumentiert (intern in Obsidian), damit das Projekt auch nach Pausen wieder anschlussfähig ist.
