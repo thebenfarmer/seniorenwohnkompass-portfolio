@@ -51,9 +51,9 @@ Alle wiederkehrenden Aufgaben sind als Slash-Commands im [Claude-Workflows-Syste
 - **Knowledge-Tracker-Refresh** — Quartals-Crawl + automatische Refresh-Vorschläge für betroffene Artikel
 - **Recht-Re-Check** — Compliance-Audit bei Gesetzes-News oder ad-hoc
 
-### Design-System (Single Source of Truth)
+### Design-System (verbindliche Referenz)
 
-Das visuelle Erscheinungsbild ist aus der Live-Site in ein framework-agnostisches **Design-System** überführt: Design-Tokens als CSS Custom Properties **und** im W3C/DTCG-JSON-Format, dazu ein menschenlesbarer Styleguide (Farben, Typografie, Spacing, Komponenten). Damit gilt auch fürs Design "Single Source of Truth" statt verstreuter Hex-Werte im Theme.
+Das visuelle Erscheinungsbild ist aus der Live-Site in ein framework-agnostisches **Design-System** überführt: Design-Tokens als CSS Custom Properties **und** im W3C/DTCG-JSON-Format, dazu ein menschenlesbarer Styleguide (Farben, Typografie, Spacing, Komponenten). Damit gibt es auch fürs Design eine verbindliche Referenz statt verstreuter Hex-Werte im Theme.
 
 Beim Auslesen wurden zwei parallel laufende Stil-Ebenen sichtbar — das gewollte Marken-System der Startseite und die Theme-Defaults der Artikelseiten. Statt sie zu vermischen, wurde bewusst auf das Marken-System standardisiert und die Abweichung dokumentiert. Separat versioniert in einem privaten Token-Repo.
 
@@ -73,7 +73,7 @@ Beim Auslesen wurden zwei parallel laufende Stil-Ebenen sichtbar — das gewollt
 ## Was an dem Projekt zeigt, wie ich arbeite
 
 - **Pipeline statt Klick-Workflow.** Inhalte werden in Git versioniert, validiert und automatisiert ausgespielt — nicht direkt im WP-Editor produziert.
-- **Single Source of Truth für Zahlen.** Gesetzliche Beträge kommen aus Quartals-Snapshots, nicht aus dem Kopf.
-- **Single Source of Truth fürs Design.** Das Erscheinungsbild liegt als versionierte Design-Tokens vor — und Stil-Konflikte werden bewusst aufgelöst statt gemittelt.
+- **Verbindliche Referenz für Zahlen.** Gesetzliche Beträge kommen aus Quartals-Snapshots, nicht aus dem Kopf.
+- **Verbindliche Referenz fürs Design.** Das Erscheinungsbild liegt als versionierte Design-Tokens vor — und Stil-Konflikte werden bewusst aufgelöst statt gemittelt.
 - **Minimaler Stack, maximale Reproduzierbarkeit.** Pi-Cron + Bash + JSON statt SaaS-Monitoring — bewusste Wahl, weil die Site wenig Frequenz, aber lange Lebensdauer hat.
 - **Doku ist Pflicht.** Workflows, Runbooks, Architektur-Entscheidungen sind dokumentiert (intern in Obsidian), damit das Projekt auch nach Pausen wieder anschlussfähig ist.
